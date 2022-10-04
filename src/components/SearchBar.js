@@ -75,6 +75,7 @@ const SearchBar = (props) => {
     });
 
     console.log(filteredProduct);
+    props.onSearchData(filteredProduct);
   };
 
   const handleOnFocus = () => {
