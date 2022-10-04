@@ -9,6 +9,7 @@ const SearchBar = (props) => {
   const [prod, setProd] = useState([]);
   const [keyword, setKeyword] = useState("");
   const [allProducts, setAllProducts] = useState([]);
+  const [isData, setIsData] = useState(false);
 
   useEffect(async () => {
     const data = fetch("https://dummyjson.com/products")
@@ -75,6 +76,7 @@ const SearchBar = (props) => {
     });
 
     console.log(filteredProduct);
+    setIsData(true);
     props.onSearchData(filteredProduct);
   };
 
@@ -83,7 +85,7 @@ const SearchBar = (props) => {
   };
 
   return (
-    <div className={searchBar.container}>
+    <div className={isData ? searchBar.height : searchBar.container}>
       <ReactSearchAutocomplete
         items={prod}
         onSearch={handleOnSearch}

@@ -1,0 +1,22 @@
+.img{
+  width: 240px;
+}
+
+.card{
+  width: 48%;
+  margin: 0 auto;
+  border: 1px solid black;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.imagesContainer{
+    display: flex;
+    list-style: none;
+    flex-wrap: wrap;
+}
+
+.images{
+  padding: 0.4rem;
+  object-fit: cover;
+}

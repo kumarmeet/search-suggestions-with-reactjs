@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 
+import resultClass from "./result.module.css";
+
 const Result = (props) => {
   let res = null;
 
@@ -7,20 +9,20 @@ const Result = (props) => {
     const result = props.data[0];
     res = (
       <>
-        <div>
-          <img src={result.thumbnail} />
-        </div>
-        <div>
+        <div className={resultClass.card}>
+          <img className={resultClass.img} src={result.thumbnail} />
           <h2>{result.title}</h2>
           <h4>{result.brand}</h4>
           <p>{result.description}</p>
-          <p>{result.price}</p>
-          <p>{result.discountPercentage}</p>
-          <ul>
+          <p>{result.price}$</p>
+          <p>Discount: {result.discountPercentage}%</p>
+        </div>
+        <div>
+          <ul className={resultClass.imagesContainer}>
             {result.images.map((image, idx) => {
               return (
-                <li key={idx}>
-                  <img src={image} />
+                <li className={resultClass.images} key={idx}>
+                  <img className={resultClass.img} src={image} />
                 </li>
               );
             })}
